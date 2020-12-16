@@ -17,7 +17,7 @@ lateinit var selection : MutableList<Food>
 class FoodSelection : AppCompatActivity() {
 
     companion object {
-        const val FoodSelectionResultCode = 0
+        const val FoodSelectionResultCode = 1
     }
 
     lateinit var binding: ActivityFoodSelectionBinding
@@ -44,7 +44,7 @@ class FoodSelection : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode != EditFoodActivity.NewFoodResultCode) {
-            Log.d(TAG, "Received unexpected result from child activity.")
+            Log.d(TAG, "Received unexpected result from child activity (${resultCode}).")
             return
         }
 

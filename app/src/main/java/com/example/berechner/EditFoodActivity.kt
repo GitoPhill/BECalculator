@@ -23,7 +23,7 @@ private const val TAG : String = "EditFoodActivity"
 class EditFoodActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     companion object {
-        const val NewFoodResultCode = 0
+        const val NewFoodResultCode = 1
         val invalidFoodElement = Food("Invalid", Unit.g, 0, 0.0, 0.0)
     }
 
@@ -32,6 +32,8 @@ class EditFoodActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        newFood = invalidFoodElement
 
         binding = ActivityNewFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)

@@ -77,7 +77,17 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        Log.d(TAG, "MainActivity.onActivityResult")
+        Log.d(TAG, "MainActivity.onActivityResult (requestCode = ${requestCode}, resultCode = ${resultCode})")
+
+        if (resultCode != FoodSelection.FoodSelectionResultCode) {
+            Log.d(TAG, "Received unexepected result code from FoodSelection (${resultCode})")
+            return
+        }
+
+        if (selection.isEmpty()) {
+            Log.d(TAG, "No food selected.")
+            return
+        }
 
         myDataset.add(MealComponent(selection[0]))
         binding.recyclerView.adapter?.notifyDataSetChanged()
