@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BE Rechner</string>
+    <string name="itemresult">ItemResult</string>
+    <string name="search_hint">Essen suchen</string>
+    <string name="food_selection_item">Food Selection Item</string>
+    <string name="foodName">Name</string>
+    <string name="nahrungsmittel">Nahrungsmittel</string>
+    <string name="menge">Menge</string>
+    <string name="kh_pro_menge">KH pro Menge</string>
+    <string name="bread_unit">Brot Einheiten</string>
+    <string name="ok">OK</string>
+    <string-array name="unit_array">
+        <item>g</item>
+        <item>ml</item>
+    </string-array>
+</resources>
