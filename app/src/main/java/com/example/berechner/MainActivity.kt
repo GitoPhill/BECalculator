@@ -7,16 +7,18 @@ import android.util.JsonWriter
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.berechner.adapter.ItemAdapter
+import com.example.berechner.adapter.ItemAdapterUpdateInterface
 import com.example.berechner.databinding.ActivityMainBinding
+import com.example.berechner.model.BECalculator
 import com.example.berechner.model.MealComponent
 import java.io.File
 import java.io.StringWriter
 
 
 private const val TAG = "MainActivity"
-lateinit var myDataset : MutableList<MealComponent>
+lateinit var mealComponentList : MutableList<MealComponent>
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), ItemAdapterUpdateInterface {
 
     lateinit var binding: ActivityMainBinding
 
@@ -29,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val recyclerView = binding.recyclerView
-        myDataset = mutableListOf()
-        recyclerView.adapter = ItemAdapter(this, myDataset)
+        mealComponentList = mutableListOf()
+        recyclerView.adapter = ItemAdapter(this, mealComponentList, this)
         recyclerView.setHasFixedSize(true)
 
         binding.floatingActionButtonClear.setOnClickListener{ clearMeal() }
@@ -42,6 +44,8 @@ class MainActivity : AppCompatActivity() {
 
             startActivityForResult(intent, FoodSelection.FoodSelectionResultCode)
         }
+
+        binding.textViewTotal.text = "Gesamt: 0.0 BE"
     }
 
     override fun onResume() {
@@ -50,8 +54,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun clearMeal() {
-        myDataset.clear()
+        mealComponentList.clear()
         binding.recyclerView.adapter?.notifyDataSetChanged()
+        updateResult()
     }
 
     fun storeData() {
@@ -62,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         writer.setIndent("  ")
 
         writer.beginArray()
-        for (data in myDataset) {
+        for (data in mealComponentList) {
             data.food.writeJson(writer)
         }
         writer.endArray()
@@ -89,8 +94,25 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        myDataset.add(MealComponent(selection[0]))
+        mealComponentList.add(MealComponent(selection[0]))
         binding.recyclerView.adapter?.notifyDataSetChanged()
     }
 
+    fun updateResult() {
+        var result: Double = 0.0
+        for (component in mealComponentList) {
+            result += component.bread_unit
+        }
+
+        binding.textViewTotal.text = String.format("Gesamt: %1$.1f BE", result)
+    }
+
+    override fun onItemUpdate(position: Int, amount: Int) {
+        mealComponentList[position].bread_unit = amount.toDouble()
+        mealComponentList[position].bread_unit = BECalculator().calculate(mealComponentList[position].food, amount)
+        mealComponentList[position].amount = amount
+        binding.recyclerView.adapter?.notifyItemChanged(position)
+
+        updateResult()
+    }
 }

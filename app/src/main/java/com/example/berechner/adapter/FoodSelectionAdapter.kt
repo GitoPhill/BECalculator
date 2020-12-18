@@ -1,6 +1,5 @@
 package com.example.berechner.adapter
 
-import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,7 +37,7 @@ class FoodSelectionAdapter(private var foodSelection: FoodSelection)
     private fun handleOnItemClicked(holder: ItemViewHolder) {
         selection.add(foodList[holder.adapterPosition])
 
-        foodSelection.setResult(Activity.RESULT_OK);
+        foodSelection.setResult(FoodSelection.FoodSelectionResultCode);
         foodSelection.finish()
     }
 

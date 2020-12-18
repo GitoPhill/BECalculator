@@ -11,7 +11,6 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.berechner.R
-import com.example.berechner.model.BECalculator
 import com.example.berechner.model.MealComponent
 
 private const val TAG = "ItemAdapter"
@@ -21,16 +20,17 @@ interface ItemAdapterUpdateInterface {
 }
 
 class ItemAdapter (private val context: Context,
-                   private val dataset: MutableList<MealComponent>
-) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(), ItemAdapterUpdateInterface {
+                   private val dataset: MutableList<MealComponent>,
+                   private val itemAdapterUpdater: ItemAdapterUpdateInterface
+) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
 
-    override fun onItemUpdate(position: Int, amount: Int) {
-        Log.d(TAG, "dataset[" + position + "].amount = " + amount)
-        dataset[position].bread_unit = amount.toDouble()
-        dataset[position].bread_unit = BECalculator().calculate(dataset[position].food, amount)
-        dataset[position].amount = amount
-        notifyItemChanged(position)
-    }
+//    override fun onItemUpdate(position: Int, amount: Int) {
+//        Log.d(TAG, "dataset[" + position + "].amount = " + amount)
+//        dataset[position].bread_unit = amount.toDouble()
+//        dataset[position].bread_unit = BECalculator().calculate(dataset[position].food, amount)
+//        dataset[position].amount = amount
+//        notifyItemChanged(position)
+//    }
 
     class ItemViewHolder(private val view: View, val adapterUpdateInterface: ItemAdapterUpdateInterface) : RecyclerView.ViewHolder(view){
         val item_name: TextView = view.findViewById(R.id.item_name)
@@ -42,7 +42,7 @@ class ItemAdapter (private val context: Context,
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
 
-        val itemView = ItemViewHolder(adapterLayout, this)
+        val itemView = ItemViewHolder(adapterLayout, itemAdapterUpdater)
 
         itemView.item_amount.setOnEditorActionListener(MyEditorActionListener(itemView))
 
