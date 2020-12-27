@@ -13,6 +13,8 @@
     <string name="total">Gesamt:</string>
     <string name="card_view_item_food_name">Food Name</string>
     <string name="card_view_item_food_be_info">Food BE Info</string>
+    <string name="edit_food_item">Ändern</string>
+    <string name="delete_food_item">Löschen</string>
     <string-array name="unit_array">
         <item>g</item>
         <item>ml</item>

@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.berechner.adapter.foodForEditing
 import com.example.berechner.databinding.ActivityNewFoodBinding
 import com.example.berechner.model.Food
 import com.example.berechner.model.Unit
@@ -33,8 +34,6 @@ class EditFoodActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        newFood = invalidFoodElement
-
         binding = ActivityNewFoodBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -56,9 +55,23 @@ class EditFoodActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
             onEditorCarbsAction(v, actionId, event)
         }
 
-        binding.editTextAmount.setText(invalidFoodElement.amount.toString())
-        binding.editTextCarbs.setText(invalidFoodElement.carbs.toString())
-        binding.editTextBEs.setText(invalidFoodElement.bread_unit.toString())
+        when (foodForEditing == null){
+            true -> {
+                newFood = Food(invalidFoodElement.name,
+                    invalidFoodElement.unit,
+                    invalidFoodElement.amount,
+                    invalidFoodElement.carbs,
+                    invalidFoodElement.bread_unit)
+            }
+            false -> {
+                newFood = foodForEditing as Food
+                binding.editTextName.setText(newFood.name)
+            }
+        }
+
+        binding.editTextAmount.setText(newFood.amount.toString())
+        binding.editTextCarbs.setText(newFood.carbs.toString())
+        binding.editTextBEs.setText(newFood.bread_unit.toString())
     }
 
     fun eval_input_and_return(){
@@ -70,13 +83,11 @@ class EditFoodActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
             unit = Unit.ml
         }
 
-        newFood = Food(
-            binding.editTextName.text.toString(),
-            unit,
-            binding.editTextAmount.text.toString().toInt(),
-            binding.editTextCarbs.text.toString().toDouble(),
-            binding.editTextBEs.text.toString().toDouble()
-        )
+        newFood.name = binding.editTextName.text.toString()
+        newFood.unit = unit
+        newFood.amount = binding.editTextAmount.text.toString().toInt()
+        newFood.carbs = binding.editTextCarbs.text.toString().toDouble()
+        newFood.bread_unit = binding.editTextBEs.text.toString().toDouble()
 
         Log.d(TAG, "Food is ${newFood.toString()}")
         setResult(NewFoodResultCode)

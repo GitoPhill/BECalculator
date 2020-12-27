@@ -27,6 +27,8 @@ class FoodSelection : AppCompatActivity() {
         binding = ActivityFoodSelectionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        Log.d(TAG, "onCreate")
+
         foodList = Datasource(applicationContext).loadFoodList().toMutableList()
 
         val recyclerView = binding.recyclerView
@@ -43,6 +45,9 @@ class FoodSelection : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
+
+        Log.d(TAG, "onActivityResult")
+
         if (resultCode != EditFoodActivity.NewFoodResultCode) {
             Log.d(TAG, "Received unexpected result from child activity (${resultCode}).")
             return
@@ -53,8 +58,14 @@ class FoodSelection : AppCompatActivity() {
             return
         }
 
-        foodList.add(newFood)
+        var indexOfFood = foodList.indexOf(newFood)
+        if (indexOfFood < 0) {
+            foodList.add(newFood)
+            binding.recyclerView.adapter?.notifyItemInserted(foodList.size - 1)
+        }else {
+            binding.recyclerView.adapter?.notifyItemChanged(indexOfFood)
+        }
+
         Datasource(applicationContext).storeData(foodList.toList())
-        binding.recyclerView.adapter?.notifyItemInserted(foodList.size-1)
     }
 }

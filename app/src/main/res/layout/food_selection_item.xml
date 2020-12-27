@@ -26,7 +26,6 @@
         card_view:cardBackgroundColor="@color/cardview_light_background"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="5dp"
-        card_view:contentPadding="5dp"
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent">
 
