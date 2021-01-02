@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity(), ItemAdapterUpdateInterface {
             startActivityForResult(intent, FoodSelection.FoodSelectionResultCode)
         }
 
-        binding.textViewTotal.text = "Gesamt: 0.0 BE"
+        binding.textViewTotal.text = getString(R.string.totelBreadUnitHint)
     }
 
     override fun onResume() {
