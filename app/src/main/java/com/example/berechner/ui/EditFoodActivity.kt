@@ -1,4 +1,4 @@
-package com.example.berechner
+package com.example.berechner.ui
 
 import android.content.Context
 import android.os.Bundle
@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.berechner.R
 import com.example.berechner.adapter.foodForEditing
 import com.example.berechner.databinding.ActivityNewFoodBinding
 import com.example.berechner.model.Food

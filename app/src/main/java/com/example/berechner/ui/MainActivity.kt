@@ -1,4 +1,4 @@
-package com.example.berechner
+package com.example.berechner.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.JsonWriter
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.berechner.R
 import com.example.berechner.adapter.ItemAdapter
 import com.example.berechner.adapter.ItemAdapterUpdateInterface
 import com.example.berechner.databinding.ActivityMainBinding

@@ -5,9 +5,13 @@ import android.util.Log
 import android.view.*
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.berechner.*
+import com.example.berechner.R
 import com.example.berechner.data.Datasource
 import com.example.berechner.model.Food
+import com.example.berechner.ui.EditFoodActivity
+import com.example.berechner.ui.FoodSelection
+import com.example.berechner.ui.foodList
+import com.example.berechner.ui.selection
 
 private const val TAG = "FoodSelectionAdapter"
 

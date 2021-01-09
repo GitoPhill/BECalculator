@@ -1,4 +1,4 @@
-package com.example.berechner
+package com.example.berechner.ui
 
 import android.content.Intent
 import android.os.Bundle
