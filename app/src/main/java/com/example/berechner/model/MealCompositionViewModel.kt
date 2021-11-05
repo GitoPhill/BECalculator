@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.berechner.data.FoodRepository
 
 private const val TAG = "MealCompVM"
@@ -44,5 +45,15 @@ class MealCompositionViewModel(application: Application): AndroidViewModel(appli
         mealList.value = _list
 
         Log.d(TAG, "updateMealComponent: food = ${mealComponent.food.name}")
+    }
+}
+
+
+class SharedViewModel : ViewModel() {
+
+    val selected = MutableLiveData<Food>()
+
+    fun select(item: Food) {
+        selected.value = item
     }
 }

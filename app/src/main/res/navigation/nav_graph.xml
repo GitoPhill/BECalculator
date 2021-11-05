@@ -18,6 +18,8 @@
         android:label="FoodSelectionFragment">
         <action android:id="@+id/action_foodSelectionFragment_to_editFoodFragment"
             app:destination="@+id/editFoodFragment" />
+        <action android:id="@+id/action_foodSelectionFragment_to_mealCompositionFragment"
+            app:destination="@+id/mealCompositionFragment" />
     </fragment>
     <fragment
         android:id="@+id/editFoodFragment"

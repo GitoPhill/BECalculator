@@ -68,6 +68,11 @@ class ItemAdapter (private val context: Context,
         notifyDataSetChanged()
     }
 
+    public fun addMealComponent(item: MealComponent) {
+        mealComponentList.add(item)
+        notifyDataSetChanged()
+    }
+
     class MyEditorActionListener(private val itemViewHolder: ItemViewHolder) : TextView.OnEditorActionListener {
         override fun onEditorAction(v: TextView, actionId: Int, event: KeyEvent?): Boolean {
             val imm: InputMethodManager = v.context

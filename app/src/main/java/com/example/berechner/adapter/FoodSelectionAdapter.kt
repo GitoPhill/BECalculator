@@ -1,5 +1,6 @@
 package com.example.berechner.adapter
 
+import android.util.Log
 import android.view.ActionMode
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,6 @@ import com.example.berechner.R
 import com.example.berechner.model.Food
 import com.example.berechner.ui.FoodSelectionFragment
 import com.example.berechner.ui.foodList
-import com.example.berechner.ui.selection
 
 private const val TAG = "FoodSelectionAdapter"
 
@@ -51,10 +51,10 @@ class FoodSelectionAdapter(private var foodSelection: FoodSelectionFragment)
     }
 
     private fun handleOnItemClicked(holder: ItemViewHolder) {
-        selection.add(foodList[holder.adapterPosition])
+        Log.d(TAG, "handleOnItemClicked ${holder.adapterPosition} foodList size = ${foodList.size}")
+        //selection.add(foodList[holder.adapterPosition])
 
-        //foodSelection.setResult(FoodSelection.FoodSelectionResultCode);
-        //foodSelection.finish()
+        foodSelection.onSelected(foodList[holder.adapterPosition])
     }
 
     private var actionMode: ActionMode? = null
