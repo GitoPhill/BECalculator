@@ -1,22 +1,26 @@
 package com.example.berechner.model
 
 import android.app.Application
+import android.util.JsonReader
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.berechner.data.FoodRepository
+import java.io.File
 
 private const val TAG = "MealCompVM"
 
 class MealCompositionViewModel(application: Application): AndroidViewModel(application) {
-    val repo = FoodRepository(application.applicationContext)
+    val repo = FoodRepository()
     var mealList: MutableLiveData<MutableList<MealComponent>> = repo.loadTestMeal()
-    val foodList: LiveData<MutableList<Food>> = repo.getFoodList()
+    var foodList: MutableLiveData<MutableList<Food>> =
+        repo.getFoodList(File(application.applicationContext.filesDir, "foodDB.json"))
 
-    fun update()
-    {
+    fun loadFromFile(reader: JsonReader) {
+        foodList.value = repo.getFoodList(reader)
+    }
+
+    fun update() {
         mealList = repo.loadTestMeal()
     }
 
@@ -45,15 +49,5 @@ class MealCompositionViewModel(application: Application): AndroidViewModel(appli
         mealList.value = _list
 
         Log.d(TAG, "updateMealComponent: food = ${mealComponent.food.name}")
-    }
-}
-
-
-class SharedViewModel : ViewModel() {
-
-    val selected = MutableLiveData<Food>()
-
-    fun select(item: Food) {
-        selected.value = item
     }
 }

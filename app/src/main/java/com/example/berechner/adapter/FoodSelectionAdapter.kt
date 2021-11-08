@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.berechner.R
 import com.example.berechner.model.Food
 import com.example.berechner.ui.FoodSelectionFragment
-import com.example.berechner.ui.foodList
 
 private const val TAG = "FoodSelectionAdapter"
 
@@ -18,6 +17,9 @@ var foodForEditing: Food? = null
 
 class FoodSelectionAdapter(private var foodSelection: FoodSelectionFragment)
     : RecyclerView.Adapter<FoodSelectionAdapter.ItemViewHolder>(){
+
+    //private val model: MealCompositionViewModel by foodSelection.activityViewModels()
+    private var foodList: MutableList<Food> = mutableListOf()
 
     init {
         foodForEditing = null
@@ -40,22 +42,39 @@ class FoodSelectionAdapter(private var foodSelection: FoodSelectionFragment)
         return food_sel_item
     }
 
-    override fun getItemCount() = foodList.size
+    override fun getItemCount(): Int {
+//        if (model.foodList.value == null) {
+//            return 0
+//        }
+
+        return foodList.size//model.foodList.value!!.size
+    }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.itemName.text = foodList[position].name
+        val food = foodList[position]//model.foodList.value!![position]
+        holder.itemName.text = food.name
         holder.itemInfo.text = String.format("%d %s -> %.1f BE"/* %2$'s' -> %3$'f' BE"*/,
-                                             foodList[position].amount,
-                                             foodList[position].unit,
-                                             foodList[position].bread_unit)
+                                             food.amount,
+                                             food.unit,
+                                             food.bread_unit)
     }
 
     private fun handleOnItemClicked(holder: ItemViewHolder) {
-        Log.d(TAG, "handleOnItemClicked ${holder.adapterPosition} foodList size = ${foodList.size}")
+        Log.d(TAG, "handleOnItemClicked ${holder.adapterPosition} foodList size = $itemCount")
         //selection.add(foodList[holder.adapterPosition])
 
-        foodSelection.onSelected(foodList[holder.adapterPosition])
+        foodSelection.onSelected(foodList[holder.adapterPosition])//model.foodList.value!![holder.adapterPosition])
+
+        //foodSelection.onSelected(foodList[holder.adapterPosition])
     }
+
+    public fun setFoodList(list: MutableList<Food>){
+        Log.d(TAG, "setFoodList(list.size = ${foodList.size})")
+        foodList = list
+        Log.d(TAG, "setFoodList(list.size = ${foodList.size})")
+        notifyDataSetChanged()
+    }
+
 
     private var actionMode: ActionMode? = null
     private var selectedItem: ItemViewHolder? = null

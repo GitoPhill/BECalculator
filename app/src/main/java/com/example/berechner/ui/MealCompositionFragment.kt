@@ -49,7 +49,6 @@ class MealCompositionFragment: Fragment(),
             Log.d(TAG, "observer mealList size is ${list.size}")
 
             adapter.setMealComponentList(list)
-            adapter.notifyDataSetChanged()
         }
 
         binding.floatingActionButtonClear.setOnClickListener{
