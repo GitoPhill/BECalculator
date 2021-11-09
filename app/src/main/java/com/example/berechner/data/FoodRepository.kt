@@ -1,37 +1,32 @@
 package com.example.berechner.data
 
-import android.content.Context
 import android.util.JsonReader
-import android.util.JsonWriter
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.example.berechner.model.Food
 import com.example.berechner.model.MealComponent
 import com.example.berechner.model.Unit
 import java.io.File
-import java.io.StringWriter
 
-private const val TAG = "Datasource"
+private const val TAG = "FoodRepository"
 
-class Datasource (val context: Context){
-    fun loadTestMeal(): MutableList<MealComponent> {
-        return mutableListOf<MealComponent>(
-            MealComponent(Food("VK Brot", Unit.g, 45, 18.0, 1.5)),
-            MealComponent(Food("Nudeln", Unit.g, 100,28.7, 2.39)),
-            MealComponent(Food("Reiswaffel", Unit.g, 100, 80.6, 6.72))
-        )
+class FoodRepository() {
+
+    fun loadTestMeal(): MutableLiveData<MutableList<MealComponent>> {
+//        return LiveData<MutableList<MealComponent>>(mutableListOf<MealComponent>(
+//            MealComponent(Food("VK Brot", Unit.g, 45, 18.0, 1.5)),
+//            MealComponent(Food("Nudeln", Unit.g, 100,28.7, 2.39)),
+//            MealComponent(Food("Reiswaffel", Unit.g, 100, 80.6, 6.72))
+//        ))
+          return MutableLiveData<MutableList<MealComponent>>(mutableListOf<MealComponent>(
+              MealComponent(Food("VK Brot", Unit.g, 45, 18.0, 1.5)),
+              MealComponent(Food("Nudeln", Unit.g, 100,28.7, 2.39)),
+              MealComponent(Food("Reiswaffel", Unit.g, 100, 80.6, 6.72))))
     }
 
-    fun loadFoodList(): List<Food> {
+    fun getFoodList(reader: JsonReader): MutableList<Food> {
+        val resultList = mutableListOf<Food>()
 
-        val file: File = File(context.filesDir, "foodDB.json")
-        if (file.exists() == false){
-            Log.d(TAG, "File ${file.name} does not exist yet. Returning an empty list.")
-            return listOf()
-        }
-
-        val resultList: MutableList<Food> = mutableListOf()
-
-        val reader = JsonReader(File(context.filesDir, "foodDB.json").reader())
         reader.beginArray()
 
         while (reader.hasNext()) {
@@ -76,29 +71,19 @@ class Datasource (val context: Context){
         reader.endArray()
         reader.close()
 
-        Log.d("DataSource", "resultList.size = ${resultList.size}")
+        Log.d(TAG, "resultList.size = ${resultList.size}")
         return resultList
     }
 
-    fun storeData(foodList: List<Food>) {
-        Log.d(TAG, "Store data:")
+    fun getFoodList(file: File): MutableList<Food> {
 
-        val result = StringWriter()
-        val writer = JsonWriter(result)
-        writer.setIndent("  ")
-
-        writer.beginArray()
-        for (item in foodList) {
-            item.writeJson(writer)
-            result.appendLine()
+        if (!file.exists()){
+            Log.d(TAG, "File ${file.name} does not exist yet. Returning an empty list.")
+            return mutableListOf<Food>()
         }
-        writer.endArray()
-        writer.close()
 
-        Log.d(TAG, result.toString())
-
-        val file = File(context.filesDir, "foodDB.json")
-        file.writeText(result.toString())
+        return getFoodList(JsonReader(file.reader()))
     }
+
 
 }

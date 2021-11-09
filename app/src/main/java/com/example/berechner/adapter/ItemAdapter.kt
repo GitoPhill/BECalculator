@@ -20,10 +20,8 @@ interface ItemAdapterUpdateInterface {
 }
 
 class ItemAdapter (private val context: Context,
-                   private val dataset: MutableList<MealComponent>,
                    private val itemAdapterUpdater: ItemAdapterUpdateInterface
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
-
 //    override fun onItemUpdate(position: Int, amount: Int) {
 //        Log.d(TAG, "dataset[" + position + "].amount = " + amount)
 //        dataset[position].bread_unit = amount.toDouble()
@@ -32,13 +30,16 @@ class ItemAdapter (private val context: Context,
 //        notifyItemChanged(position)
 //    }
 
-    class ItemViewHolder(private val view: View, val adapterUpdateInterface: ItemAdapterUpdateInterface) : RecyclerView.ViewHolder(view){
+    private var mealComponentList: MutableList<MealComponent> = mutableListOf()
+
+    class ItemViewHolder(view: View, val adapterUpdateInterface: ItemAdapterUpdateInterface) : RecyclerView.ViewHolder(view){
         val item_name: TextView = view.findViewById(R.id.item_name)
         val item_amount: EditText = view.findViewById(R.id.item_amount)
         val item_result: TextView = view.findViewById(R.id.item_result)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
+        Log.d(TAG, "onCreateViewHolder")
         val adapterLayout = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item, parent, false)
 
@@ -49,14 +50,27 @@ class ItemAdapter (private val context: Context,
         return itemView
     }
 
-    override fun getItemCount() = dataset.size
+    override fun getItemCount() = mealComponentList.size
 
-    override fun onBindViewHolder(holder: ItemAdapter.ItemViewHolder, position: Int) {
-        val item = dataset[position]
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val item = mealComponentList[position]
         holder.item_name.text = item.food.name
         holder.item_amount.setText(item.amount.toString())
         holder.item_result.text = String.format("%1$.1f BE", item.bread_unit)
         //holder.item_result.text = item.bread_unit.toString().format() + " BE"
+        Log.d(TAG, "onBindViewHolder: name = ${holder.item_name.text}")
+    }
+
+    public fun setMealComponentList(list: MutableList<MealComponent>){
+        Log.d(TAG, "setMealComponentList(list.size = ${mealComponentList.size})")
+        mealComponentList = list
+        Log.d(TAG, "setMealComponentList(list.size = ${mealComponentList.size})")
+        notifyDataSetChanged()
+    }
+
+    public fun addMealComponent(item: MealComponent) {
+        mealComponentList.add(item)
+        notifyDataSetChanged()
     }
 
     class MyEditorActionListener(private val itemViewHolder: ItemViewHolder) : TextView.OnEditorActionListener {

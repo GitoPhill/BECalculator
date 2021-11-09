@@ -5,11 +5,11 @@ import android.util.JsonWriter
 enum class Unit { g, ml}
 
 data class Food (
-    val name: String,
-    val unit: Unit,
-    val amount: Int,
-    val carbs: Double,
-    val bread_unit: Double
+    var name: String,
+    var unit: Unit,
+    var amount: Int,
+    var carbs: Double,
+    var bread_unit: Double
 ) {
 
     fun writeJson(writer: JsonWriter) {

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mealCompositionFragment">
+
+    <fragment
+        android:id="@+id/mealCompositionFragment"
+        android:name="com.example.berechner.ui.MealCompositionFragment"
+        android:label="MealCompositionFragment" >
+        <action
+            android:id="@+id/action_mealCompositionFragment_to_foodSelectionFragment"
+            app:destination="@id/foodSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodSelectionFragment"
+        android:name="com.example.berechner.ui.FoodSelectionFragment"
+        android:label="FoodSelectionFragment">
+        <action android:id="@+id/action_foodSelectionFragment_to_editFoodFragment"
+            app:destination="@+id/editFoodFragment" />
+        <action android:id="@+id/action_foodSelectionFragment_to_mealCompositionFragment"
+            app:destination="@+id/mealCompositionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFoodFragment"
+        android:name="com.example.berechner.ui.EditFoodFragment"
+        android:label="EditFoodFragment">
+        <action android:id="@+id/action_editFoodFragment_to_foodSelectionFragment"
+            app:destination="@+id/foodSelectionFragment" />
+    </fragment>
+</navigation>
