@@ -1,0 +1,105 @@
+[{"name":"Mischbrot","unit":"g","amount":45,"carbs":21.6,"BE":1.8}
+,{"name":"Vollkornbrot","unit":"g","amount":45,"carbs":18.0,"BE":1.5}
+,{"name":"Weißbrot","unit":"g","amount":45,"carbs":25.2,"BE":2.1}
+,{"name":"Milch","unit":"ml","amount":100,"carbs":4.8,"BE":0.4}
+,{"name":"Mandarinen","unit":"g","amount":40,"carbs":3.6,"BE":0.3}
+,{"name":"Rosinenbrot","unit":"g","amount":40,"carbs":20.4,"BE":1.7}
+,{"name":"Vollmilchschokolade","unit":"g","amount":25,"carbs":13.2,"BE":1.1}
+,{"name":"Laugenkastanien","unit":"g","amount":100,"carbs":54.0,"BE":4.5}
+,{"name":"Apfelsaft","unit":"ml","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Himbeeren","unit":"g","amount":125,"carbs":6.0,"BE":0.5}
+,{"name":"Kartoffelklöße","unit":"g","amount":100,"carbs":21.6,"BE":1.8}
+,{"name":"Wackelpudding Waldmeister","unit":"g","amount":100,"carbs":15.6,"BE":1.3}
+,{"name":"Rosinenbrötchen","unit":"g","amount":100,"carbs":46.8,"BE":3.9}
+,{"name":"Landliebe Vollmilch Pudding","unit":"g","amount":100,"carbs":14.4,"BE":1.2}
+,{"name":"Erdbeeren","unit":"g","amount":125,"carbs":7.2,"BE":0.6}
+,{"name":"Backofen Pommes","unit":"g","amount":100,"carbs":25.2,"BE":2.1}
+,{"name":"Spätzle","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Kartoffelpuffer","unit":"g","amount":100,"carbs":15.6,"BE":1.3}
+,{"name":"Dosenmais","unit":"g","amount":100,"carbs":21.6,"BE":1.8}
+,{"name":"Dosenananas","unit":"g","amount":100,"carbs":18.0,"BE":1.5}
+,{"name":"Salzkartoffeln","unit":"g","amount":100,"carbs":14.4,"BE":1.2}
+,{"name":"Bratkartoffeln","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Nudeln","unit":"g","amount":150,"carbs":25.2,"BE":2.1}
+,{"name":"Heidelbeeren","unit":"g","amount":125,"carbs":8.4,"BE":0.7}
+,{"name":"Banane","unit":"g","amount":150,"carbs":30.0,"BE":2.5}
+,{"name":"Leicht & Cross Knecke","unit":"g","amount":100,"carbs":69.6,"BE":5.8}
+,{"name":"Apfel","unit":"g","amount":150,"carbs":21.6,"BE":1.8}
+,{"name":"Bulgur","unit":"g","amount":100,"carbs":19.2,"BE":1.6}
+,{"name":"Linsensuppe","unit":"g","amount":100,"carbs":4.8,"BE":0.4}
+,{"name":"Weintrauben","unit":"g","amount":125,"carbs":19.2,"BE":1.6}
+,{"name":"Gebrannte Mandeln","unit":"g","amount":30,"carbs":12.0,"BE":1.0}
+,{"name":"Milchreis zuckerreduziert","unit":"g","amount":100,"carbs":20.4,"BE":1.7}
+,{"name":"Rosinen","unit":"g","amount":100,"carbs":69.6,"BE":5.8}
+,{"name":"Pizza","unit":"g","amount":100,"carbs":33.6,"BE":2.8}
+,{"name":"Joghurt","unit":"g","amount":100,"carbs":14.4,"BE":1.2}
+,{"name":"Kuchen","unit":"g","amount":100,"carbs":33.6,"BE":2.8}
+,{"name":"Reiswaffeln","unit":"g","amount":100,"carbs":78.0,"BE":6.5}
+,{"name":"Mango","unit":"g","amount":200,"carbs":25.2,"BE":2.1}
+,{"name":"Waffeln","unit":"g","amount":100,"carbs":33.6,"BE":2.8}
+,{"name":"Kartoffelpüree","unit":"g","amount":100,"carbs":15.6,"BE":1.3}
+,{"name":"Wassermelone","unit":"g","amount":100,"carbs":8.4,"BE":0.7}
+,{"name":"Buchstabensuppe","unit":"g","amount":100,"carbs":7.2,"BE":0.6}
+,{"name":"Birne","unit":"g","amount":125,"carbs":15.6,"BE":1.3}
+,{"name":"Popcorn","unit":"g","amount":100,"carbs":60.0,"BE":5.0}
+,{"name":"Donut","unit":"g","amount":100,"carbs":45.6,"BE":3.8}
+,{"name":"Leibnitz Kekse","unit":"g","amount":34,"carbs":21.6,"BE":1.8}
+,{"name":"Croissant (fertig gebacken)","unit":"g","amount":100,"carbs":33.6,"BE":2.8}
+,{"name":"Maggi Spätzle in Champignon-Sauce","unit":"g","amount":100,"carbs":16.8,"BE":1.4}
+,{"name":"Blaubeeren/Heidelbeeren","unit":"g","amount":125,"carbs":8.4,"BE":0.7}
+,{"name":"Kartoffelbrei","unit":"g","amount":100,"carbs":19.2,"BE":1.6}
+,{"name":"Hirse","unit":"g","amount":100,"carbs":21.6,"BE":1.8}
+,{"name":"Vitalis Knusper Schoko -30%","unit":"g","amount":100,"carbs":57.6,"BE":4.8}
+,{"name":"Monte mit Smarties","unit":"g","amount":100,"carbs":24.0,"BE":2.0}
+,{"name":"Börek","unit":"g","amount":100,"carbs":10.8,"BE":0.9}
+,{"name":"Mondamin Pfannkuchen","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Käsespätzle","unit":"g","amount":100,"carbs":25.2,"BE":2.1}
+,{"name":"Maggi Käse-Spätzle mit Röstzwiebeln","unit":"g","amount":100,"carbs":16.8,"BE":1.4}
+,{"name":"Schupfnudeln","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Briochettes","unit":"g","amount":40,"carbs":21.6,"BE":1.8}
+,{"name":"Schokobrötchen","unit":"g","amount":100,"carbs":46.8,"BE":3.9}
+,{"name":"NicNac's","unit":"g","amount":100,"carbs":36.0,"BE":3.0}
+,{"name":"Würzcashews","unit":"g","amount":100,"carbs":20.4,"BE":1.7}
+,{"name":"Dany Sahne Schoko Vanille","unit":"g","amount":100,"carbs":16.8,"BE":1.4}
+,{"name":"Vitalis Knusper Müsli Flakes & Mandeln","unit":"g","amount":100,"carbs":72.0,"BE":6.0}
+,{"name":"Orangen","unit":"g","amount":150,"carbs":12.0,"BE":1.0}
+,{"name":"Vollkorn Tortilla Wrap","unit":"g","amount":100,"carbs":46.8,"BE":3.9}
+,{"name":"Ofenkartoffeln","unit":"g","amount":100,"carbs":20.4,"BE":1.7}
+,{"name":"Aprikosen","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Pflaumen","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Quarkbällchen","unit":"g","amount":100,"carbs":33.6,"BE":2.8}
+,{"name":"Pringles","unit":"g","amount":100,"carbs":56.4,"BE":4.7}
+,{"name":"Piccolinis (Wagner)","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Rumkugel","unit":"g","amount":100,"carbs":68.4,"BE":5.7}
+,{"name":"Tortellini","unit":"g","amount":100,"carbs":26.4,"BE":2.2}
+,{"name":"Schokoreiswaffeln","unit":"g","amount":100,"carbs":57.6,"BE":4.8}
+,{"name":"Couscous","unit":"g","amount":100,"carbs":13.2,"BE":1.1}
+,{"name":"Pfannkuchen","unit":"g","amount":100,"carbs":20.4,"BE":1.7}
+,{"name":"Mini Butterlaugenbrötchen","unit":"g","amount":100,"carbs":36.0,"BE":3.0}
+,{"name":"Russisch Brot","unit":"g","amount":100,"carbs":88.8,"BE":7.4}
+,{"name":"Paradies Creme","unit":"g","amount":100,"carbs":18.0,"BE":1.5}
+,{"name":"Kirschen","unit":"g","amount":100,"carbs":13.2,"BE":1.1}
+,{"name":"Gnocchi","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Meine Kuchenwelt Cup Cakes","unit":"g","amount":60,"carbs":32.4,"BE":2.7}
+,{"name":"Laugen Croissants (Edeka)","unit":"g","amount":60,"carbs":18.0,"BE":1.5}
+,{"name":"Rot Weiß Kekse","unit":"g","amount":100,"carbs":63.6,"BE":5.3}
+,{"name":"Vitalis Super Müsli","unit":"g","amount":100,"carbs":40.8,"BE":3.4}
+,{"name":"Kakao","unit":"ml","amount":200,"carbs":22.8,"BE":1.9}
+,{"name":"Reis","unit":"g","amount":100,"carbs":27.6,"BE":2.3}
+,{"name":"Kinder Country","unit":"g","amount":24,"carbs":13.2,"BE":1.1}
+,{"name":"Milchbrötchen","unit":"g","amount":100,"carbs":54.0,"BE":4.5}
+,{"name":"Schokocroissant","unit":"g","amount":100,"carbs":44.4,"BE":3.7}
+,{"name":"Germknödel","unit":"g","amount":100,"carbs":43.2,"BE":3.6}
+,{"name":"Erbsen","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Kartoffelkroketten","unit":"g","amount":100,"carbs":16.8,"BE":1.4}
+,{"name":"Nektarinen","unit":"g","amount":125,"carbs":15.6,"BE":1.3}
+,{"name":"Milchschnitte","unit":"g","amount":28,"carbs":9.6,"BE":0.8}
+,{"name":"Linsen Chips Funny Frisch","unit":"g","amount":100,"carbs":60.0,"BE":5.0}
+,{"name":"Erbseneintopf","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Pudding natren","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Käsebällchen","unit":"g","amount":100,"carbs":40.8,"BE":3.4}
+,{"name":"Cracker","unit":"g","amount":100,"carbs":64.8,"BE":5.4}
+,{"name":"Ebly","unit":"g","amount":100,"carbs":26.4,"BE":2.2}
+,{"name":"Ananas","unit":"g","amount":125,"carbs":15.6,"BE":1.3}
+,{"name":"Corny","unit":"g","amount":25,"carbs":16.8,"BE":1.4}
+]
