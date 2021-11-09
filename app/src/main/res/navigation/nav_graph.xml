@@ -24,5 +24,8 @@
     <fragment
         android:id="@+id/editFoodFragment"
         android:name="com.example.berechner.ui.EditFoodFragment"
-        android:label="EditFoodFragment" />
+        android:label="EditFoodFragment">
+        <action android:id="@+id/action_editFoodFragment_to_foodSelectionFragment"
+            app:destination="@+id/foodSelectionFragment" />
+    </fragment>
 </navigation>

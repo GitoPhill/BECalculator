@@ -83,13 +83,14 @@ class Datasource (val context: Context){
     fun storeData(foodList: List<Food>) {
         Log.d(TAG, "Store data:")
 
-        var result = StringWriter()
-        var writer = JsonWriter(result)
+        val result = StringWriter()
+        val writer = JsonWriter(result)
         writer.setIndent("  ")
 
         writer.beginArray()
         for (item in foodList) {
             item.writeJson(writer)
+            result.appendLine()
         }
         writer.endArray()
         writer.close()

@@ -42,9 +42,6 @@ class FoodSelectionFragment: Fragment() {
         Log.d(TAG, "onCreateView")
         binding = FragmentFoodSelectionBinding.inflate(inflater)
 
-        // TODO: How to access the context in a more safe manner?
-        //foodList = context?.let { Datasource(it).loadFoodList().toMutableList() }!!
-
         binding.floatingActionButtonAdd.setOnClickListener {
             findNavController().navigate(R.id.action_foodSelectionFragment_to_editFoodFragment)
         }
@@ -97,7 +94,7 @@ class FoodSelectionFragment: Fragment() {
                             var result = StringWriter()
                             var writer = JsonWriter(result)
                             writer.beginArray()
-                            for (item in model.foodList?.value!!) {
+                            for (item in model.foodList.value!!) {
                                 item.writeJson(writer)
                                 result.appendLine()
                             }
@@ -115,7 +112,6 @@ class FoodSelectionFragment: Fragment() {
                     val fd = requireContext().contentResolver.openFileDescriptor(uri, "r")
                     val inputStream = FileInputStream(fd!!.fileDescriptor)
                     val jsonReader = JsonReader(inputStream.reader())
-                    //model.foodList = FoodRepository().getFoodList(jsonReader)
                     model.loadFromFile(jsonReader)
                 }
 
@@ -123,17 +119,9 @@ class FoodSelectionFragment: Fragment() {
                 if (binding.recyclerView.adapter != null) {
                     binding.recyclerView.adapter!!.notifyDataSetChanged()
                 }
-                //model.foodList = FoodRepository().getFoodList(File(data?.data?.toString()))
-                //val contentResolver = requireContext().contentResolver
-                //contentResolver.openInputStream(data?.data!!)?.reader()
-
-
-
             }
             else -> Log.d(TAG,"onActivityResult: Unexpected request code ($requestCode)")
         }
-
-
     }
 
     fun onSelected(food: Food) {

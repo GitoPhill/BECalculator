@@ -13,6 +13,7 @@ import com.example.berechner.adapter.ItemAdapter
 import com.example.berechner.adapter.ItemAdapterUpdateInterface
 import com.example.berechner.databinding.FragmentMealCompositionBinding
 import com.example.berechner.model.MealCompositionViewModel
+import java.util.*
 
 private const val TAG = "MealCompositionFragment"
 
@@ -26,11 +27,10 @@ class MealCompositionFragment: Fragment(),
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         Log.d(TAG, "onCreateView")
         binding = FragmentMealCompositionBinding.inflate(inflater)
         return binding.root
-        //return inflater.inflate(R.layout.fragment_meal_composition, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,7 +38,6 @@ class MealCompositionFragment: Fragment(),
 
         Log.d(TAG, "onViewCreated")
 
-        //binding = FragmentMealCompositionBinding.inflate(layoutInflater)
         var recyclerView = binding.recyclerView
         recyclerView.setHasFixedSize(true)
         var adapter: ItemAdapter = ItemAdapter(requireContext(), this)
@@ -49,6 +48,8 @@ class MealCompositionFragment: Fragment(),
             Log.d(TAG, "observer mealList size is ${list.size}")
 
             adapter.setMealComponentList(list)
+            binding.textViewTotal.setText(String.format(Locale.ENGLISH, "Gesamt: %1$.2f BE",
+                                          viewModel.getBEsForMeal()))
         }
 
         binding.floatingActionButtonClear.setOnClickListener{

@@ -72,67 +72,18 @@ class FoodRepository() {
         reader.close()
 
         Log.d(TAG, "resultList.size = ${resultList.size}")
-        return resultList//MutableLiveData<MutableList<Food>>(resultList)
+        return resultList
     }
 
-    fun getFoodList(file: File): MutableLiveData<MutableList<Food>> {
+    fun getFoodList(file: File): MutableList<Food> {
 
-        //val file: File = File(context.filesDir, "foodDB.json")
         if (!file.exists()){
             Log.d(TAG, "File ${file.name} does not exist yet. Returning an empty list.")
-            return MutableLiveData<MutableList<Food>>()
+            return mutableListOf<Food>()
         }
 
-        return MutableLiveData<MutableList<Food>>(getFoodList(JsonReader(file.reader())))
-
-//        val resultList = mutableListOf<Food>()
-//
-//        val reader = JsonReader(file.reader())
-//        reader.beginArray()
-//
-//        while (reader.hasNext()) {
-//            var food_name: String = ""
-//            var food_unit: Unit = Unit.g
-//            var food_amount: Int = 0
-//            var food_carbs: Double = 0.0
-//            var food_BEs: Double = 0.0
-//
-//            reader.beginObject()
-//            while(reader.hasNext()) {
-//                val name : String = reader.nextName()
-//                if (name.equals("name")){
-//                    food_name = reader.nextString()
-//                }
-//                else if(name.equals("unit")) {
-//                    if (reader.nextString().equals("g")){
-//                        food_unit = Unit.g
-//                    }
-//                    else {
-//                        food_unit = Unit.ml
-//                    }
-//                }
-//                else if (name.equals("amount")){
-//                    food_amount = reader.nextInt()
-//                }
-//                else if (name.equals("carbs")){
-//                    food_carbs = reader.nextDouble()
-//                }
-//                else if (name.equals("BE")) {
-//                    food_BEs = reader.nextDouble()
-//                }
-//                else{
-//                    Log.e( TAG, "Invalid format! Json element name \"" + name + "\" is unknown.")
-//                    error("Invalid format!")
-//                }
-//            }
-//            resultList.add(Food(food_name, food_unit, food_amount, food_carbs, food_BEs))
-//            reader.endObject()
-//        }
-//
-//        reader.endArray()
-//        reader.close()
-//
-//        Log.d(TAG, "resultList.size = ${resultList.size}")
-//        return MutableLiveData<MutableList<Food>>(resultList)
+        return getFoodList(JsonReader(file.reader()))
     }
+
+
 }

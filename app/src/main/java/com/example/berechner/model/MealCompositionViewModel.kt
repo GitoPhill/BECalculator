@@ -11,21 +11,16 @@ import java.io.File
 private const val TAG = "MealCompVM"
 
 class MealCompositionViewModel(application: Application): AndroidViewModel(application) {
-    val repo = FoodRepository()
-    var mealList: MutableLiveData<MutableList<MealComponent>> = repo.loadTestMeal()
-    var foodList: MutableLiveData<MutableList<Food>> =
-        repo.getFoodList(File(application.applicationContext.filesDir, "foodDB.json"))
+    private val repo = FoodRepository()
+    val mealList: MutableLiveData<MutableList<MealComponent>> by lazy {
+        MutableLiveData<MutableList<MealComponent>>(mutableListOf<MealComponent>())
+    }
+    val foodList: MutableLiveData<MutableList<Food>> by lazy {
+        MutableLiveData<MutableList<Food>>(repo.getFoodList(File(application.applicationContext.filesDir, "foodDB.json")))
+    }
 
     fun loadFromFile(reader: JsonReader) {
         foodList.value = repo.getFoodList(reader)
-    }
-
-    fun update() {
-        mealList = repo.loadTestMeal()
-    }
-
-    fun addMealComponent(mealComponent: MealComponent) {
-        mealList.value?.add(mealComponent)
     }
 
     fun clearMealComponentList() {
@@ -36,18 +31,21 @@ class MealCompositionViewModel(application: Application): AndroidViewModel(appli
     }
 
     fun updateMealComponent(position: Int, amount: Int) {
-//        viewModel.mealList.value!![position].bread_unit = amount.toDouble()
-//        viewModel.mealList.value!![position].bread_unit = BECalculator().calculate(viewModel.mealList.value!![position].food, amount)
-//        viewModel.mealList.value!![position].amount = amount
-        var _list = mealList.value!!
+        val list = mealList.value!!
 
-        var mealComponent: MealComponent = _list[position]
+        val mealComponent: MealComponent = list[position]
 
         mealComponent.bread_unit = BECalculator().calculate(mealComponent.food, amount)
         mealComponent.amount = amount
 
-        mealList.value = _list
+        mealList.value = list
 
         Log.d(TAG, "updateMealComponent: food = ${mealComponent.food.name}")
+    }
+
+    fun getBEsForMeal(): Double {
+        var result: Double = 0.0
+        for (meal in mealList.value!!) { result += meal.bread_unit }
+        return result
     }
 }
