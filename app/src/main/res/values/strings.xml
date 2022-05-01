@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">BE Rechner</string>
     <string name="itemresult">ItemResult</string>
-    <string name="search_hint">Essen suchen</string>
+    <string name="search_hint">Search food</string>
     <string name="food_selection_item">Food Selection Item</string>
     <string name="foodName">Name</string>
     <string name="nahrungsmittel">Nahrungsmittel</string>

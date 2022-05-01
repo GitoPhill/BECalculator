@@ -20,7 +20,7 @@ private const val TAG = "MealCompositionFragment"
 
 class MealCompositionFragment: Fragment(),
     ItemAdapterUpdateInterface {
-    lateinit var binding: FragmentMealCompositionBinding
+    private lateinit var binding: FragmentMealCompositionBinding
     private val viewModel: MealCompositionViewModel by activityViewModels()
 
     override fun onCreateView(

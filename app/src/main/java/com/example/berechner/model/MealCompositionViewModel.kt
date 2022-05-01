@@ -15,8 +15,26 @@ class MealCompositionViewModel(application: Application): AndroidViewModel(appli
     val mealList: MutableLiveData<MutableList<MealComponent>> by lazy {
         MutableLiveData<MutableList<MealComponent>>(mutableListOf<MealComponent>())
     }
+
+    private val foodListDB: MutableList<Food> by lazy {
+        repo.getFoodList(File(application.applicationContext.filesDir, "foodDB.json"))
+    }
+
     val foodList: MutableLiveData<MutableList<Food>> by lazy {
-        MutableLiveData<MutableList<Food>>(repo.getFoodList(File(application.applicationContext.filesDir, "foodDB.json")))
+        MutableLiveData<MutableList<Food>>(foodListDB)
+    }
+
+    fun filterFoodList(name: String) {
+        if (name.isNullOrEmpty()) {
+            foodList.value = foodListDB
+        } else {
+            foodList.value = mutableListOf()
+            for (food in foodListDB) {
+                if (food.name.contains(name, true)) {
+                    foodList.value!!.add(food)
+                }
+            }
+        }
     }
 
     fun loadFromFile(reader: JsonReader) {

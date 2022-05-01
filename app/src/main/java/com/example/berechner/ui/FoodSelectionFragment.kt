@@ -2,6 +2,8 @@ package com.example.berechner.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.JsonReader
 import android.util.JsonWriter
 import android.util.Log
@@ -22,9 +24,6 @@ import java.io.FileOutputStream
 import java.io.StringWriter
 
 private const val TAG = "FoodSelectionFragment"
-
-lateinit var foodList : MutableList<Food>
-lateinit var selection : MutableList<Food>
 
 const val CREATE_FOOD_DB_JSON = 1
 const val READ_FOOD_DB_JSON = 2
@@ -64,7 +63,18 @@ class FoodSelectionFragment: Fragment() {
             startActivityForResult(intent, READ_FOOD_DB_JSON)
         }
 
+        binding.editTextTextFoodSearch.addTextChangedListener(textWatcher)
+
         return binding.root
+    }
+
+    private val textWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {
+            Log.d(TAG, "afterTextChanged: $s")
+            model.filterFoodList(s.toString())
+        }
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
