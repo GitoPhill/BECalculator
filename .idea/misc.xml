@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.137" />
+        <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/drawable/ic_launcher_background.xml" value="0.137" />
         <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/layout/activity_food_selection.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/layout/activity_new_food.xml" value="0.27291666666666664" />
@@ -11,6 +13,8 @@
         <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/layout/fragment_meal_composition.xml" value="0.1" />
         <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/layout/fragment_new_food.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/layout/list_item.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.137" />
+        <entry key="..\:/Users/vbere/AndroidStudioProjects/BERechner/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.144" />
       </map>
     </option>
   </component>
