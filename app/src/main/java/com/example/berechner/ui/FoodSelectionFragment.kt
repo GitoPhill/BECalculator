@@ -91,6 +91,7 @@ class FoodSelectionFragment: Fragment() {
             adapter.setFoodList(list)
         }
 
+        model.filterFoodList("")
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -54,9 +54,10 @@ class FoodSelectionAdapter(private var foodSelection: FoodSelectionFragment)
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val food = foodList[position]//model.foodList.value!![position]
         holder.itemName.text = food.name
-        holder.itemInfo.text = String.format("%d %s -> %.1f BE"/* %2$'s' -> %3$'f' BE"*/,
+        holder.itemInfo.text = String.format("%d %s -> %.1f g KH -> %.1f BE",
                                              food.amount,
                                              food.unit,
+                                             food.carbs,
                                              food.bread_unit)
     }
 
