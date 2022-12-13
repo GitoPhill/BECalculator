@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.example.berechner"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -34,6 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.example.berechner'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -75,4 +76,8 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
     testImplementation 'com.google.truth:truth:1.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+
+    def lifecycle_version = "2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 }

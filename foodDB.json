@@ -53,7 +53,7 @@
 ,{"name":"Monte mit Smarties","unit":"g","amount":100,"carbs":24.0,"BE":2.0}
 ,{"name":"Börek","unit":"g","amount":100,"carbs":10.8,"BE":0.9}
 ,{"name":"Mondamin Pfannkuchen","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
-,{"name":"Käsespätzle","unit":"g","amount":100,"carbs":25.2,"BE":2.1}
+,{"name":"Käsespätzle","unit":"g","amount":100,"carbs":16.0,"BE":1.33}
 ,{"name":"Maggi Käse-Spätzle mit Röstzwiebeln","unit":"g","amount":100,"carbs":16.8,"BE":1.4}
 ,{"name":"Schupfnudeln","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
 ,{"name":"Briochettes","unit":"g","amount":40,"carbs":21.6,"BE":1.8}
@@ -102,4 +102,43 @@
 ,{"name":"Ebly","unit":"g","amount":100,"carbs":26.4,"BE":2.2}
 ,{"name":"Ananas","unit":"g","amount":125,"carbs":15.6,"BE":1.3}
 ,{"name":"Corny","unit":"g","amount":25,"carbs":16.8,"BE":1.4}
+,{"name":"Knöpfle","unit":"g","amount":100,"carbs":24.0,"BE":2.0}
+,{"name":"Frisch gepresster Osaft","unit":"ml","amount":100,"carbs":8.3,"BE":0.69}
+,{"name":"Vitalis SuperMüsli -30%","unit":"g","amount":100,"carbs":41.0,"BE":3.42}
+,{"name":"Grießbrei","unit":"g","amount":100,"carbs":16.6,"BE":1.38}
+,{"name":"Knuspererbsen","unit":"g","amount":100,"carbs":57.0,"BE":4.75}
+,{"name":"Christstollen","unit":"g","amount":100,"carbs":55.0,"BE":4.58}
+,{"name":"Götterspeise","unit":"g","amount":100,"carbs":16.5,"BE":1.38}
+,{"name":"Chips","unit":"g","amount":100,"carbs":49.0,"BE":4.08}
+,{"name":"Milchreis","unit":"g","amount":100,"carbs":21.0,"BE":1.75}
+,{"name":"Pom-Bären","unit":"g","amount":100,"carbs":61.0,"BE":5.08}
+,{"name":"Grünkern-Bratling","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Muffins","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Laugencroissant","unit":"g","amount":100,"carbs":42.6,"BE":3.55}
+,{"name":"Kaki","unit":"g","amount":200,"carbs":32.0,"BE":2.67}
+,{"name":"Kellogg's Crunchy Nut","unit":"g","amount":100,"carbs":82.0,"BE":6.83}
+,{"name":"Falafel","unit":"g","amount":100,"carbs":37.0,"BE":3.08}
+,{"name":"Bananenchips","unit":"g","amount":100,"carbs":58.0,"BE":4.83}
+,{"name":"Sonntagsbrötchen (aufbacken)","unit":"g","amount":100,"carbs":46.0,"BE":3.83}
+,{"name":"Lasagne","unit":"g","amount":100,"carbs":9.0,"BE":0.75}
+,{"name":"Backcamembert","unit":"g","amount":100,"carbs":21.6,"BE":1.8}
+,{"name":"Traubensaft","unit":"ml","amount":100,"carbs":16.0,"BE":1.33}
+,{"name":"Käsestangen","unit":"g","amount":100,"carbs":55.0,"BE":4.58}
+,{"name":"Waffel","unit":"g","amount":100,"carbs":30.0,"BE":2.5}
+,{"name":"Butterlaugenecken","unit":"g","amount":100,"carbs":36.2,"BE":3.02}
+,{"name":"Fruchtgummi","unit":"g","amount":100,"carbs":77.0,"BE":6.42}
+,{"name":"Edrnussflips","unit":"g","amount":100,"carbs":49.0,"BE":4.08}
+,{"name":"Plundertasche","unit":"g","amount":100,"carbs":38.0,"BE":3.17}
+,{"name":"Kellogg's Choco krispies","unit":"g","amount":100,"carbs":75.0,"BE":6.25}
+,{"name":"Honigmelone","unit":"g","amount":150,"carbs":19.2,"BE":1.6}
+,{"name":"Lakritz","unit":"g","amount":100,"carbs":80.0,"BE":6.67}
+,{"name":"Birnencrumble","unit":"g","amount":100,"carbs":55.0,"BE":4.58}
+,{"name":"Kürbiscremesuppe ","unit":"ml","amount":250,"carbs":13.2,"BE":1.1}
+,{"name":"Salzstangen","unit":"g","amount":100,"carbs":70.0,"BE":5.83}
+,{"name":"Kiwi","unit":"g","amount":100,"carbs":9.6,"BE":0.8}
+,{"name":"Zwieback","unit":"g","amount":100,"carbs":74.0,"BE":6.17}
+,{"name":"Bahlsen Kekse weiß","unit":"g","amount":100,"carbs":65.0,"BE":5.42}
+,{"name":"Gebäck Mischung ","unit":"g","amount":100,"carbs":61.0,"BE":5.08}
+,{"name":"Weiße Schokolade ","unit":"g","amount":100,"carbs":61.0,"BE":5.08}
+,{"name":"Weizen Tortilla Wrap","unit":"g","amount":100,"carbs":51.0,"BE":4.25}
 ]
