@@ -13,11 +13,6 @@ private const val TAG = "FoodRepository"
 class FoodRepository() {
 
     fun loadTestMeal(): MutableLiveData<MutableList<MealComponent>> {
-//        return LiveData<MutableList<MealComponent>>(mutableListOf<MealComponent>(
-//            MealComponent(Food("VK Brot", Unit.g, 45, 18.0, 1.5)),
-//            MealComponent(Food("Nudeln", Unit.g, 100,28.7, 2.39)),
-//            MealComponent(Food("Reiswaffel", Unit.g, 100, 80.6, 6.72))
-//        ))
           return MutableLiveData<MutableList<MealComponent>>(mutableListOf<MealComponent>(
               MealComponent(Food("VK Brot", Unit.g, 45, 18.0, 1.5)),
               MealComponent(Food("Nudeln", Unit.g, 100,28.7, 2.39)),
@@ -61,7 +56,8 @@ class FoodRepository() {
                 }
                 else{
                     Log.e( TAG, "Invalid format! Json element name \"" + name + "\" is unknown.")
-                    error("Invalid format!")
+                    //error("Invalid format!")
+                    throw Exception("Invalid food database format!")
                 }
             }
             resultList.add(Food(food_name, food_unit, food_amount, food_carbs, food_BEs))

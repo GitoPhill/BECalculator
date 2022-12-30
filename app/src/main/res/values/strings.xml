@@ -16,6 +16,7 @@
     <string name="edit_food_item">Ändern</string>
     <string name="delete_food_item">Löschen</string>
     <string name="totelBreadUnitHint">Gesamt: 0.0 BE</string>
+    <string name="snackbar_parse_error">Ungültiges Format! Wähle richtige Datei aus!</string>
     <string-array name="unit_array">
         <item>g</item>
         <item>ml</item>

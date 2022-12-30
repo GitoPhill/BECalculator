@@ -5,6 +5,7 @@
     android:id="@+id/ConstraintLayout_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
     android:focusable="true"
     android:focusableInTouchMode="true">
 
@@ -30,6 +31,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:foregroundTint="?attr/colorButtonNormal"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
 
@@ -44,6 +46,7 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
+        app:backgroundTint="?attr/colorButtonNormal"
         app:layout_constraintBottom_toBottomOf="@id/ConstraintLayout_view"
         app:layout_constraintRight_toRightOf="@id/ConstraintLayout_view"
         app:srcCompat="@android:drawable/ic_input_add" />
@@ -55,6 +58,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
+        app:backgroundTint="?attr/colorButtonNormal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonAdd"
         app:srcCompat="@android:drawable/ic_menu_save" />
@@ -66,6 +70,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"
+        app:backgroundTint="?attr/colorButtonNormal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonSave"
         app:srcCompat="@android:drawable/stat_sys_download" />

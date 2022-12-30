@@ -19,6 +19,7 @@ import com.example.berechner.databinding.FragmentFoodSelectionBinding
 import com.example.berechner.model.Food
 import com.example.berechner.model.MealComponent
 import com.example.berechner.model.MealCompositionViewModel
+import com.google.android.material.snackbar.Snackbar
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.StringWriter
@@ -94,6 +95,7 @@ class FoodSelectionFragment: Fragment() {
         model.filterFoodList("")
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         when (requestCode) {
@@ -123,7 +125,12 @@ class FoodSelectionFragment: Fragment() {
                     val fd = requireContext().contentResolver.openFileDescriptor(uri, "r")
                     val inputStream = FileInputStream(fd!!.fileDescriptor)
                     val jsonReader = JsonReader(inputStream.reader())
-                    model.loadFromFile(jsonReader)
+                    try {
+                        model.loadFromFile(jsonReader)
+                    } catch (e: Exception) {
+                        val info = Snackbar.make(requireView(), R.string.snackbar_parse_error, Snackbar.LENGTH_SHORT)
+                        info.show()
+                    }
                 }
 
                 Log.d(TAG, "binding.recyclerView.adapter = ${binding.recyclerView.adapter}")
