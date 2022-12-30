@@ -31,7 +31,7 @@ class Datasource (val context: Context){
 
         val resultList: MutableList<Food> = mutableListOf()
 
-        val reader = JsonReader(File(context.filesDir, "foodDB.json").reader())
+        val reader = JsonReader(File(context.filesDir, "foodDB.json").reader(Charsets.UTF_8))
         reader.beginArray()
 
         while (reader.hasNext()) {
@@ -98,7 +98,7 @@ class Datasource (val context: Context){
         Log.d(TAG, result.toString())
 
         val file = File(context.filesDir, "foodDB.json")
-        file.writeText(result.toString())
+        file.writeText(result.toString(), Charsets.UTF_8)
     }
 
 }

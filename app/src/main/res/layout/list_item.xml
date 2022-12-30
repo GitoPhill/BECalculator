@@ -13,16 +13,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:text="@string/foodName" />
 
     <EditText
         android:id="@+id/item_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:ems="10"
-        android:inputType="number"
-        android:imeOptions="actionDone"/>
+        android:ems="5"
+        android:hint="@string/menge"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/item_result"

@@ -10,12 +10,12 @@
         android:text="@string/food_selection_item" />
 </FrameLayout>-->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.BERechner">
 
     <!-- A Cardview that contains two TextViews -->
     <androidx.cardview.widget.CardView
@@ -23,7 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        card_view:cardBackgroundColor="@color/cardview_light_background"
         card_view:cardCornerRadius="4dp"
         card_view:cardElevation="5dp"
         card_view:layout_constraintStart_toStartOf="parent"
@@ -31,7 +30,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:theme="@style/Theme.BERechner">
 
             <TextView
                 android:id="@+id/textViewCardFoodName"

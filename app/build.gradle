@@ -68,7 +68,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation "androidx.core:core-ktx:$androidx_core_ktx_version"
     implementation "androidx.appcompat:appcompat:$androidx_appcompat_version"
-    implementation "com.google.android.material:material:$android_material_version"
+    implementation "com.google.android.material:material:1.7.0"
     implementation "androidx.constraintlayout:constraintlayout:$androidx_constraintlayout_version"
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation "androidx.fragment:fragment-ktx:$androidx_fragment_ktx_version"
